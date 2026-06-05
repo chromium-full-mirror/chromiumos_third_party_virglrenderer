@@ -9796,7 +9796,7 @@ static int vrend_transfer_send_readpixels(struct vrend_context *ctx,
          return EINVAL;
       }
 
-      data = malloc(send_size);
+      data = calloc(1, send_size);
       if (!data) {
          virgl_error("Memory allocation failed for %"PRIu64"\n", send_size);
          return ENOMEM;
