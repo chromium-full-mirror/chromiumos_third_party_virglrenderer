@@ -3063,10 +3063,6 @@ spec@!opengl 1.1@depthstencil-default_fb-blit samples=2,Fail
 spec@!opengl 1.1@depthstencil-default_fb-blit samples=4,Fail
 spec@!opengl 1.1@depthstencil-default_fb-blit samples=6,Fail
 spec@!opengl 1.1@depthstencil-default_fb-blit samples=8,Fail
-spec@!opengl 1.1@depthstencil-default_fb-clear samples=2,Fail
-spec@!opengl 1.1@depthstencil-default_fb-clear samples=4,Fail
-spec@!opengl 1.1@depthstencil-default_fb-clear samples=6,Fail
-spec@!opengl 1.1@depthstencil-default_fb-clear samples=8,Fail
 spec@!opengl 1.1@depthstencil-default_fb-copypixels samples=2,Fail
 spec@!opengl 1.1@depthstencil-default_fb-copypixels samples=4,Fail
 spec@!opengl 1.1@depthstencil-default_fb-copypixels samples=6,Fail
@@ -3083,19 +3079,6 @@ spec@!opengl 1.1@depthstencil-default_fb-drawpixels-float-and-ushort samples=2,F
 spec@!opengl 1.1@depthstencil-default_fb-drawpixels-float-and-ushort samples=4,Fail
 spec@!opengl 1.1@depthstencil-default_fb-drawpixels-float-and-ushort samples=6,Fail
 spec@!opengl 1.1@depthstencil-default_fb-drawpixels-float-and-ushort samples=8,Fail
-spec@!opengl 1.1@depthstencil-default_fb-readpixels-24_8 samples=2,Fail
-spec@!opengl 1.1@depthstencil-default_fb-readpixels-24_8 samples=4,Fail
-spec@!opengl 1.1@depthstencil-default_fb-readpixels-24_8 samples=6,Fail
-spec@!opengl 1.1@depthstencil-default_fb-readpixels-24_8 samples=8,Fail
-spec@!opengl 1.1@depthstencil-default_fb-readpixels-32f_24_8_rev samples=2,Fail
-spec@!opengl 1.1@depthstencil-default_fb-readpixels-32f_24_8_rev samples=4,Fail
-spec@!opengl 1.1@depthstencil-default_fb-readpixels-32f_24_8_rev samples=6,Fail
-spec@!opengl 1.1@depthstencil-default_fb-readpixels-32f_24_8_rev samples=8,Fail
-spec@!opengl 1.1@depthstencil-default_fb-readpixels-float-and-ushort samples=2,Fail
-spec@!opengl 1.1@depthstencil-default_fb-readpixels-float-and-ushort samples=4,Fail
-spec@!opengl 1.1@depthstencil-default_fb-readpixels-float-and-ushort samples=6,Fail
-spec@!opengl 1.1@depthstencil-default_fb-readpixels-float-and-ushort samples=8,Fail
-spec@!opengl 1.1@large-tex,Crash
 spec@arb_copy_image@arb_copy_image-formats --samples=2,Fail
 spec@arb_copy_image@arb_copy_image-formats --samples=2@Source: GL_ALPHA/Destination: GL_ALPHA,Fail
 spec@arb_copy_image@arb_copy_image-formats --samples=4,Fail
@@ -3140,15 +3123,6 @@ spec@arb_sample_shading@samplemask 8@noms mask_in_one,Fail
 spec@arb_sample_shading@samplemask 8@noms partition,Fail
 spec@arb_sample_shading@samplemask 8@sample mask_in_one,Fail
 spec@arb_spirv_extensions@execution@storage_buffer_storage_class@unsized-array,Fail
-spec@arb_texture_cube_map@copyteximage cube samples=2,Fail
-spec@arb_texture_cube_map@copyteximage cube samples=4,Fail
-spec@arb_texture_cube_map@copyteximage cube samples=6,Fail
-spec@arb_texture_cube_map@copyteximage cube samples=8,Fail
-spec@arb_texture_rectangle@copyteximage rect samples=2,Fail
-spec@arb_texture_rectangle@copyteximage rect samples=4,Fail
-spec@arb_texture_rectangle@copyteximage rect samples=6,Fail
-spec@arb_texture_rectangle@copyteximage rect samples=8,Fail
-spec@arb_texture_view@tex-view,Fail
 spec@ext_framebuffer_multisample@alpha-to-one-dual-src-blend 6,Fail
 spec@ext_framebuffer_multisample@alpha-to-one-dual-src-blend 8,Fail
 spec@ext_framebuffer_multisample@draw-buffers-alpha-to-one 6,Fail
@@ -3185,14 +3159,6 @@ spec@ext_framebuffer_multisample@sample-alpha-to-one 6,Fail
 spec@ext_framebuffer_multisample@sample-alpha-to-one 8,Fail
 spec@ext_framebuffer_multisample@upsample 6 stencil,Fail
 spec@ext_framebuffer_multisample@upsample 8 stencil,Fail
-spec@ext_texture_array@copyteximage 1d_array samples=2,Fail
-spec@ext_texture_array@copyteximage 1d_array samples=4,Fail
-spec@ext_texture_array@copyteximage 1d_array samples=6,Fail
-spec@ext_texture_array@copyteximage 1d_array samples=8,Fail
-spec@ext_texture_array@copyteximage 2d_array samples=2,Fail
-spec@ext_texture_array@copyteximage 2d_array samples=4,Fail
-spec@ext_texture_array@copyteximage 2d_array samples=6,Fail
-spec@ext_texture_array@copyteximage 2d_array samples=8,Fail
 spec@ext_transform_feedback2@draw-auto offset,Fail
 spec@glsl-1.50@execution@variable-indexing@vs-output-array-vec3-index-wr-before-gs,Crash
 spec@glsl-1.50@execution@variable-indexing@vs-output-array-vec4-index-wr-before-gs,Crash
@@ -3203,3 +3169,69 @@ spec@nv_copy_image@nv_copy_image-formats --samples=4@Source: GL_ALPHA/Destinatio
 spec@nv_copy_image@nv_copy_image-formats --samples=8,Fail
 spec@nv_copy_image@nv_copy_image-formats --samples=8@Source: GL_ALPHA/Destination: GL_ALPHA,Fail
 
+dEQP-GLES3.functional.draw_buffers_indexed.overwrite_common.common_advanced_blend_eq_buffer_advanced_blend_eq,Fail
+dEQP-GLES3.functional.draw_buffers_indexed.overwrite_common.common_blend_eq_buffer_advanced_blend_eq,Fail
+dEQP-GLES3.functional.draw_buffers_indexed.overwrite_common.common_separate_blend_eq_buffer_advanced_blend_eq,Fail
+dEQP-GLES3.functional.draw_buffers_indexed.overwrite_indexed.common_advanced_blend_eq_buffer_advanced_blend_eq,Fail
+dEQP-GLES3.functional.draw_buffers_indexed.overwrite_indexed.common_advanced_blend_eq_buffer_blend_eq,Fail
+dEQP-GLES3.functional.draw_buffers_indexed.overwrite_indexed.common_advanced_blend_eq_buffer_separate_blend_eq,Fail
+dEQP-GLES31.functional.blend_equation_advanced.barrier.colorburn,Fail
+dEQP-GLES31.functional.blend_equation_advanced.barrier.colordodge,Fail
+dEQP-GLES31.functional.blend_equation_advanced.barrier.darken,Fail
+dEQP-GLES31.functional.blend_equation_advanced.barrier.difference,Fail
+dEQP-GLES31.functional.blend_equation_advanced.barrier.exclusion,Fail
+dEQP-GLES31.functional.blend_equation_advanced.barrier.hardlight,Fail
+dEQP-GLES31.functional.blend_equation_advanced.barrier.hsl_color,Fail
+dEQP-GLES31.functional.blend_equation_advanced.barrier.hsl_hue,Fail
+dEQP-GLES31.functional.blend_equation_advanced.barrier.hsl_luminosity,Fail
+dEQP-GLES31.functional.blend_equation_advanced.barrier.hsl_saturation,Fail
+dEQP-GLES31.functional.blend_equation_advanced.barrier.lighten,Fail
+dEQP-GLES31.functional.blend_equation_advanced.barrier.multiply,Fail
+dEQP-GLES31.functional.blend_equation_advanced.barrier.overlay,Fail
+dEQP-GLES31.functional.blend_equation_advanced.barrier.screen,Fail
+dEQP-GLES31.functional.blend_equation_advanced.barrier.softlight,Fail
+dEQP-GLES31.functional.blend_equation_advanced.basic.colorburn,Fail
+dEQP-GLES31.functional.blend_equation_advanced.basic.colordodge,Fail
+dEQP-GLES31.functional.blend_equation_advanced.basic.darken,Fail
+dEQP-GLES31.functional.blend_equation_advanced.basic.difference,Fail
+dEQP-GLES31.functional.blend_equation_advanced.basic.exclusion,Fail
+dEQP-GLES31.functional.blend_equation_advanced.basic.hardlight,Fail
+dEQP-GLES31.functional.blend_equation_advanced.basic.hsl_color,Fail
+dEQP-GLES31.functional.blend_equation_advanced.basic.hsl_hue,Fail
+dEQP-GLES31.functional.blend_equation_advanced.basic.hsl_luminosity,Fail
+dEQP-GLES31.functional.blend_equation_advanced.basic.hsl_saturation,Fail
+dEQP-GLES31.functional.blend_equation_advanced.basic.lighten,Fail
+dEQP-GLES31.functional.blend_equation_advanced.basic.multiply,Fail
+dEQP-GLES31.functional.blend_equation_advanced.basic.overlay,Fail
+dEQP-GLES31.functional.blend_equation_advanced.basic.screen,Fail
+dEQP-GLES31.functional.blend_equation_advanced.basic.softlight,Fail
+dEQP-GLES31.functional.blend_equation_advanced.msaa.colorburn,Fail
+dEQP-GLES31.functional.blend_equation_advanced.msaa.colordodge,Fail
+dEQP-GLES31.functional.blend_equation_advanced.msaa.darken,Fail
+dEQP-GLES31.functional.blend_equation_advanced.msaa.difference,Fail
+dEQP-GLES31.functional.blend_equation_advanced.msaa.exclusion,Fail
+dEQP-GLES31.functional.blend_equation_advanced.msaa.hardlight,Fail
+dEQP-GLES31.functional.blend_equation_advanced.msaa.hsl_color,Fail
+dEQP-GLES31.functional.blend_equation_advanced.msaa.hsl_hue,Fail
+dEQP-GLES31.functional.blend_equation_advanced.msaa.hsl_luminosity,Fail
+dEQP-GLES31.functional.blend_equation_advanced.msaa.hsl_saturation,Fail
+dEQP-GLES31.functional.blend_equation_advanced.msaa.lighten,Fail
+dEQP-GLES31.functional.blend_equation_advanced.msaa.multiply,Fail
+dEQP-GLES31.functional.blend_equation_advanced.msaa.overlay,Fail
+dEQP-GLES31.functional.blend_equation_advanced.msaa.screen,Fail
+dEQP-GLES31.functional.blend_equation_advanced.msaa.softlight,Fail
+dEQP-GLES31.functional.blend_equation_advanced.srgb.colorburn,Fail
+dEQP-GLES31.functional.blend_equation_advanced.srgb.colordodge,Fail
+dEQP-GLES31.functional.blend_equation_advanced.srgb.darken,Fail
+dEQP-GLES31.functional.blend_equation_advanced.srgb.difference,Fail
+dEQP-GLES31.functional.blend_equation_advanced.srgb.exclusion,Fail
+dEQP-GLES31.functional.blend_equation_advanced.srgb.hardlight,Fail
+dEQP-GLES31.functional.blend_equation_advanced.srgb.hsl_color,Fail
+dEQP-GLES31.functional.blend_equation_advanced.srgb.hsl_hue,Fail
+dEQP-GLES31.functional.blend_equation_advanced.srgb.hsl_luminosity,Fail
+dEQP-GLES31.functional.blend_equation_advanced.srgb.hsl_saturation,Fail
+dEQP-GLES31.functional.blend_equation_advanced.srgb.lighten,Fail
+dEQP-GLES31.functional.blend_equation_advanced.srgb.multiply,Fail
+dEQP-GLES31.functional.blend_equation_advanced.srgb.overlay,Fail
+dEQP-GLES31.functional.blend_equation_advanced.srgb.screen,Fail
+dEQP-GLES31.functional.blend_equation_advanced.srgb.softlight,Fail
