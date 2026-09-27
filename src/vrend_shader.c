@@ -2572,7 +2572,12 @@ static void emit_fragment_logicop(const struct dump_ctx *ctx,
 
    struct vrend_strbuf full_op_buf[PIPE_MAX_COLOR_BUFS];
    for (int i = 0; i < PIPE_MAX_COLOR_BUFS; ++i) {
-      strbuf_alloc(&full_op_buf[i], 134);
+      if (!strbuf_alloc(&full_op_buf[i], 134)) {
+         while (i--)
+            strbuf_free(&full_op_buf[i]);
+         set_buf_error(glsl_strbufs);
+         return;
+      }
    }
 
 
@@ -2675,6 +2680,9 @@ static void emit_fragment_logicop(const struct dump_ctx *ctx,
          emit_buff(glsl_strbufs, "fsout_c%d = vec4((%s) & %d) / %f;\n", i, full_op_buf[i].buf, mask[i], scale[i]);
       }
    }
+
+   for (uint32_t i = 0; i < PIPE_MAX_COLOR_BUFS; i++)
+      strbuf_free(&full_op_buf[i]);
 }
 
 static void emit_cbuf_swizzle(const struct dump_ctx *ctx,
