@@ -9167,16 +9167,16 @@ static bool check_iov_bounds(struct vrend_resource *res,
                              const struct vrend_transfer_info *info,
                              const struct iovec *iov, int num_iovs)
 {
-   GLuint transfer_size;
-   GLuint iovsize = virgl_get_iovec_size(iov, num_iovs);
-   GLuint valid_stride, valid_layer_stride;
+   uint64_t transfer_size;
+   uint64_t iovsize = virgl_get_iovec_size(iov, num_iovs);
+   uint32_t valid_stride, valid_layer_stride;
 
    /* If the transfer specifies a stride, verify that it's at least as large as
     * the minimum required for the transfer. If no stride is specified use the
     * image stride for the specified level.
     */
    if (info->stride) {
-      GLuint min_stride = util_format_get_stride(res->base.format, info->box->width);
+      size_t min_stride = util_format_get_stride(res->base.format, info->box->width);
       if (info->stride < min_stride)
          return false;
       valid_stride = info->stride;
@@ -9190,16 +9190,19 @@ static bool check_iov_bounds(struct vrend_resource *res,
     * specified use the image layer_stride for the specified level.
     */
    if (info->layer_stride) {
-      GLuint min_layer_stride = util_format_get_2d_size(res->base.format,
+      size_t min_layer_stride = util_format_get_2d_size(res->base.format,
                                                         valid_stride,
                                                         info->box->height);
       if (info->layer_stride < min_layer_stride)
          return false;
       valid_layer_stride = info->layer_stride;
    } else {
-      valid_layer_stride =
+      size_t layer_stride =
          util_format_get_2d_size(res->base.format, valid_stride,
                                  u_minify(res->base.height0, info->level));
+      if (layer_stride > UINT32_MAX)
+         return false;
+      valid_layer_stride = layer_stride;
    }
 
    /* Calculate the size required for the transferred data, based on the
