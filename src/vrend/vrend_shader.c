@@ -2570,6 +2570,13 @@ static void emit_fragment_logicop(const struct dump_ctx *ctx,
    double scale[PIPE_MAX_COLOR_BUFS];
    int mask[PIPE_MAX_COLOR_BUFS];
 
+   if (ctx->num_outputs > PIPE_MAX_COLOR_BUFS) {
+      virgl_error("Num outputs exceeded for fragment logicop: %u, max is %d\n",
+                  ctx->num_outputs, PIPE_MAX_COLOR_BUFS);
+      set_buf_error(glsl_strbufs);
+      return;
+   }
+
    struct vrend_strbuf full_op_buf[PIPE_MAX_COLOR_BUFS];
    for (int i = 0; i < PIPE_MAX_COLOR_BUFS; ++i) {
       if (!strbuf_alloc(&full_op_buf[i], 134)) {
