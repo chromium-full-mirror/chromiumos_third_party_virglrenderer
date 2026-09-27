@@ -7990,6 +7990,12 @@ static void fill_sinfo(const struct dump_ctx *ctx, struct vrend_shader_info *sin
       for (uint32_t i = 0; i < ctx->num_outputs; ++i) {
          const struct vrend_shader_io *io = &ctx->outputs[i];
          if (io->array_id  > 0) {
+            if (sinfo->output_arrays.num_arrays >=
+                ARRAY_SIZE(sinfo->output_arrays.layout)) {
+               virgl_error("Num output arrays exceeded, max is %zd\n",
+                           ARRAY_SIZE(sinfo->output_arrays.layout));
+               break;
+            }
             struct vrend_shader_io_array *array =
                   &sinfo->output_arrays.layout[sinfo->output_arrays.num_arrays];
             array->sid = io->sid;
