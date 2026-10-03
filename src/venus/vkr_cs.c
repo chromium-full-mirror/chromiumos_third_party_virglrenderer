@@ -245,7 +245,7 @@ vkr_cs_decoder_alloc_temp_internal(struct vkr_cs_decoder *dec, size_t size)
    if (buf_size > VKR_CS_DECODER_TEMP_POOL_MAX_SIZE - pool->total_size)
       return false;
 
-   uint8_t *buf = malloc(buf_size);
+   uint8_t *buf = calloc(1, buf_size);
    if (!buf)
       return false;
 
