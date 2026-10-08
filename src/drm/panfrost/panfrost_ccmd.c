@@ -24,7 +24,7 @@ panfrost_ccmd_submit(struct drm_context *dctx, struct vdrm_ccmd_req *hdr)
    uint32_t in_sync = 0;
 
    /* Avoid allocating too much stack memory. */
-   if (req->res_id_count > 128) {
+   if (req->res_id_count > 256) {
       drm_err("Too many resource IDs: %" PRIu32, req->res_id_count);
       return -EINVAL;
    }
